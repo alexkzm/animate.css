@@ -16,9 +16,13 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
 		<script type="text/javascript">
+		let animation = 'animated shake'
 		$(() => {
 			$('a.button').on('click', () => {
-				$('input[name=name]').addClass('animated shake')
+				$('input[name=name]').addClass(animation).one('animationend'), 
+				() => {
+					$(this).removeClass(animation)
+				}
 			})
 		})
 
